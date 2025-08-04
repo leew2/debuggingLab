@@ -24,7 +24,7 @@ def main():
             print(f"[ERROR] Missing columns in DataFrame: {missing_cols}. Skipping iteration {i+1} (slow mode).")
             continue
         # Optionally comment out the next line to avoid printing all data
-        # print_dataframe(df)
+        print_dataframe(df) # prints the data to show differences in time differences
         df = remove_null(df)
         end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
         end_time = time.time()
@@ -42,7 +42,7 @@ def main():
             print(f"[ERROR] Missing columns in DataFrame: {missing_cols}. Skipping iteration {i+1} (fast mode).")
             continue
         # Optionally comment out the next line to avoid printing all data
-        # print(df)
+        print(df) # prints the data to show differences in time differences
         df = df.dropna(subset=required_columns)
         end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
         end_time = time.time()
