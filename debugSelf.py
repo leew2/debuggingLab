@@ -4,56 +4,95 @@ import numpy as np
 import time as time
 import random
 import string
+import re
 
-log_lines = []
+fast_logs = []
+slow_logs = []
 
 def main():
     print("Starting debugSelf.py...")
-    
-    while True:
-        df = generate_fake_flight_reservations(200) # remakes dataframe each loop for fresh data
-        option = input("Choose mode: (0)'stop', (1)'slow', or (2)'fast': ").strip().lower()
-        
-        if option == 'stop' or option == '0':
-            print("Program stopped by user.")
-            break
-        elif option == 'slow' or option == '1':
-            start_time = time.time()
-            df = generate_fake_flight_reservations(200)
-            start_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
-            print_dataframe(df)  # "slower" method
-            df = remove_null(df) # "slower" method
-            end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
-            end_time = time.time()
-            log_lines.append(f"Execution time: {end_time - start_time} seconds\n")
-            print("\n".join(log_lines))
-            log_run("slow", start_memory, end_memory, start_time, end_time)
 
-        elif option == 'fast' or option == '2':
-            start_time = time.time()
-            start_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
-            print(df) # "faster" method
-            df = df.dropna(subset=["Origin", "Destination", "Status", "Passenger", "PNR"])  # "faster" method
-            end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
-            end_time = time.time()
-            log_lines.append(f"Execution time: {end_time - start_time} seconds\n")
-            print("\n".join(log_lines))
-            log_run("fast", start_memory, end_memory, start_time, end_time)
-        else:
-            print("Invalid option. Please enter '0', '1', '2', 'stop', 'slow', or 'fast'.")
+    # Run slow mode 100 times
+    for i in range(100):
+        start_time = time.time()
+        df = fake_flight(200)
+        start_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
+        # Optionally comment out the next line to avoid printing all data
+        # print_dataframe(df)
+        df = remove_null(df)
+        end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
+        end_time = time.time()
+        log_run("slow", start_memory, end_memory, start_time, end_time)
+    
+
+    # Run fast mode 100 times
+    for i in range(100):
+        start_time = time.time()
+        df = fake_flight(200)
+        start_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
+        # Optionally comment out the next line to avoid printing all data
+        # print(df)
+        df = df.dropna(subset=["Origin", "Destination", "Status", "Passenger", "PNR"])
+        end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
+        end_time = time.time()
+        log_run("fast", start_memory, end_memory, start_time, end_time)
+
+    metrics()
+
+# End of main function ------------------------------------------------
+
+def metrics():   
+    slow_times = extract_time(slow_logs)
+    fast_times = extract_time(fast_logs)
+    slow_memory = extract_memory(slow_logs)
+    fast_memory = extract_memory(fast_logs)
+    if slow_memory:
+        print(f"Average slow memory usage: {sum(slow_memory)/len(slow_memory):.4f} MB")
+    if fast_memory:
+        print(f"Average fast memory usage: {sum(fast_memory)/len(fast_memory):.4f} MB")
+    if slow_times:
+        print(f"Average slow execution time: {sum(slow_times)/len(slow_times):.4f} seconds")
+    if fast_times:
+        print(f"Average fast execution time: {sum(fast_times)/len(fast_times):.4f} seconds")
+    if slow_times and fast_times:
+        print(f"Slow is {sum(slow_times)/len(slow_times) / (sum(fast_times)/len(fast_times)):.2f} times slower than fast")
+
+
+def extract_time(log_list):
+    times = []
+    for entry in log_list:
+        match = re.search(r"Execution time: ([\d.]+) seconds", entry)
+        if match:
+            times.append(float(match.group(1)))
+    return times
+
+
+def extract_memory(log_list):
+    memory_usage = []
+    for entry in log_list:
+        match = re.search(r"Difference: ([\d.]+) MB", entry)
+        if match:
+            memory_usage.append(float(match.group(1)))
+    return memory_usage
+
 
 def log_run(label, start_memory, end_memory, start_time, end_time):
     """Log the run to the appropriate log file in the log folder."""
     log_file = f"log/{label}_log.txt"
-    with open(log_file, "a") as f:
-        f.write(f"Memory usage before removing nulls: {start_memory:.4f} MB\n"
+    log_entry = (f"Memory usage before removing nulls: {start_memory:.4f} MB\n"
                  f"Memory usage after removing nulls: {end_memory:.4f} MB\n"
                  f"Difference: {start_memory - end_memory:.4f} MB\n"
                  f"Execution time: {end_time - start_time} seconds\n")
+    if label == "fast":
+        fast_logs.append(log_entry)
+    elif label == "slow":
+        slow_logs.append(log_entry)
+    with open(log_file, "a") as f:
+        f.write(log_entry)
 
+# end of metric related functions ------------------------------------------------
 
-
-# printing dataframe via loop
+# printing dataframe via loop(slow)
 def print_dataframe(df):
     """Print Passenger, Origin, Destination, Fare, and Status for each row using a for loop, spaced evenly."""
     header = f"{'Passenger':<15} {'Origin':<10} {'Destination':<15} {'Fare':>10} {'Status':<12}"
@@ -62,7 +101,8 @@ def print_dataframe(df):
     for idx, row in df.iterrows():
         print(f"{str(row.get('Passenger', '')):<15} {str(row.get('Origin', '')):<10} {str(row.get('Destination', '')):<15} {str(row.get('Fare', '')):>10} {str(row.get('Status', '')):<12}")
 
-# removing null values via loop
+
+# removing null values via loop("slow")
 def remove_null(df):
     """Remove rows with missing Origin, Destination, Status, Passenger, or PNR using a for loop."""
     indices_to_drop = []
@@ -80,6 +120,7 @@ def remove_null(df):
         df = df.drop(drop_idx)
     return df
 
+
 def fill_missing_integers_with_mean(df):
     """Fill missing values in integer columns with the mean (rounded to int)."""
     int_cols = df.select_dtypes(include=[np.integer, 'Int64']).columns
@@ -93,10 +134,11 @@ def fill_missing_integers_with_mean(df):
 def save_dataframe_to_csv(df, filename):
     df.to_csv(filename, index=False)
 
+
+# ----------------------------------------------------------------------------
 # Generate a DataFrame with fake flight reservation data via copilot
 # "Create 200 fake flight reservations with fields: PNR, Passenger, Origin, Destination, Fare, Status"
-def generate_fake_flight_reservations(n):
-    
+def fake_flight(n):
     pnr_list = ["".join(random.choices(string.ascii_uppercase + string.digits, k=6)) for _ in range(n)]
     passenger_list = [f"Passenger_{i+1}" for i in range(n)]
     airports = ['JFK', 'LAX', 'ORD', 'DFW', 'DEN', 'ATL', 'SFO', 'SEA', 'MIA', 'BOS']
@@ -118,6 +160,7 @@ def generate_fake_flight_reservations(n):
     df = introduce_duplicates(df, percent=10)
     return df
 
+
 # Introduce data quality issues ----------------------------------------------------------------------------
 def introduce_null_values(df, percent):
     """Randomly introduce null values into random cells of the DataFrame."""
@@ -131,6 +174,7 @@ def introduce_null_values(df, percent):
         df.at[idx, col] = None
     return df
 
+
 def introduce_invalid_airport_codes(df, percent):
     """Randomly introduce invalid airport codes into Origin or Destination columns."""
     n = len(df)
@@ -142,6 +186,7 @@ def introduce_invalid_airport_codes(df, percent):
         df.at[idx, col] = random.choice(invalid_codes)
     return df
 
+
 def introduce_duplicates(df, percent):
     """Randomly duplicate a percentage of rows and append them to the DataFrame."""
     n = len(df)
@@ -150,6 +195,7 @@ def introduce_duplicates(df, percent):
     df_with_duplicates = pd.concat([df, duplicate_rows], ignore_index=True)
     return df_with_duplicates
 # ----------------------------------------------------------------------------------------------------------  
+
 
 if __name__ == "__main__":
     main()
