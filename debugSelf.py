@@ -13,10 +13,16 @@ def main():
     print("Starting debugSelf.py...")
 
     # Run slow mode 100 times
+    required_columns = ["Origin", "Destination", "Status", "Passenger", "PNR"]
     for i in range(100):
         start_time = time.time()
         df = fake_flight(200)
         start_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
+        # Check for required columns
+        missing_cols = [col for col in required_columns if col not in df.columns]
+        if missing_cols:
+            print(f"[ERROR] Missing columns in DataFrame: {missing_cols}. Skipping iteration {i+1} (slow mode).")
+            continue
         # Optionally comment out the next line to avoid printing all data
         # print_dataframe(df)
         df = remove_null(df)
@@ -30,9 +36,14 @@ def main():
         start_time = time.time()
         df = fake_flight(200)
         start_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
+        # Check for required columns
+        missing_cols = [col for col in required_columns if col not in df.columns]
+        if missing_cols:
+            print(f"[ERROR] Missing columns in DataFrame: {missing_cols}. Skipping iteration {i+1} (fast mode).")
+            continue
         # Optionally comment out the next line to avoid printing all data
         # print(df)
-        df = df.dropna(subset=["Origin", "Destination", "Status", "Passenger", "PNR"])
+        df = df.dropna(subset=required_columns)
         end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
         end_time = time.time()
         log_run("fast", start_memory, end_memory, start_time, end_time)
@@ -78,6 +89,7 @@ def extract_memory(log_list):
 
 def log_run(label, start_memory, end_memory, start_time, end_time):
     """Log the run to the appropriate log file in the log folder."""
+    import os
     log_file = f"log/{label}_log.txt"
     log_entry = (f"Memory usage before removing nulls: {start_memory:.4f} MB\n"
                  f"Memory usage after removing nulls: {end_memory:.4f} MB\n"
@@ -87,8 +99,12 @@ def log_run(label, start_memory, end_memory, start_time, end_time):
         fast_logs.append(log_entry)
     elif label == "slow":
         slow_logs.append(log_entry)
-    with open(log_file, "a") as f:
-        f.write(log_entry)
+    try:
+        os.makedirs(os.path.dirname(log_file), exist_ok=True)
+        with open(log_file, "a") as f:
+            f.write(log_entry)
+    except Exception as e:
+        print(f"[ERROR] Could not write to log file {log_file}: {e}")
 
 # end of metric related functions ------------------------------------------------
 
