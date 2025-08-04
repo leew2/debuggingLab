@@ -1,0 +1,4 @@
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.1272106170654297 seconds
