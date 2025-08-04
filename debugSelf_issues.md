@@ -5,6 +5,25 @@ This document outlines known and potential issues, design decisions, and improve
 
 ---
 
+## Data Assumptions
+The `fake_flight` function generates synthetic flight reservation data with the following assumptions:
+  - Each reservation has a unique PNR (6-character alphanumeric string).
+  - Passenger names are generated as 'Passenger_1', 'Passenger_2', ..., up to the number of rows requested.
+  - Origin and Destination are randomly chosen from a fixed list of 10 major US airport codes, with Origin and Destination always different for a given row.
+  - Fare is a random float between 100 and 1500 (rounded to 2 decimals).
+  - Status is randomly assigned as 'Confirmed', 'Cancelled', or 'Pending'.
+  - Data quality issues are introduced: 10% of rows have invalid airport codes, 10% have null values in random columns, and 10% of rows are duplicated.
+  - The resulting DataFrame may contain missing, invalid, or duplicate data, simulating real-world data quality problems.
+
+## Error Table
+| Error Type         | Description                                                      | Root Cause                                                      | Solution/Handling                                    |
+|--------------------|------------------------------------------------------------------|------------------------------------------------------------------|------------------------------------------------------|
+| Null Values        | Some fields (Origin, Destination, Status, Passenger, PNR, etc.) are set to null in random rows. | Randomly introduced by `introduce_null_values` to simulate missing data. | Remove rows with nulls (slow: for-loop, fast: dropna). |
+| Invalid Airport    | Origin or Destination contains invalid codes (e.g., 'XXX', '123'). | Randomly introduced by `introduce_invalid_airport_codes` to simulate data entry errors. | Validate airport codes or remove invalid rows.         |
+| Duplicates         | Some rows are exact duplicates of others.                        | Randomly introduced by `introduce_duplicates` to simulate real-world duplication. | Use `drop_duplicates()` to remove duplicates.          |
+
+
+
 ## Known Issues
 
 ### 1. Performance (Slow Mode)
@@ -20,8 +39,7 @@ This document outlines known and potential issues, design decisions, and improve
 - The percentage of data corruption is hardcoded (10%).
 
 ### 4. Logging
-- Logs are written to both in-memory lists and files, but there is no log rotation or size management.
-- If the script is run many times, log files may grow large.
+- Logs are written to both in-memory lists and files. Each log file is now limited to the last 500 lines; older entries are trimmed automatically after each write.
 
 ### 5. Function Naming Consistency
 - The function for generating fake data is named `fake_flight` in the latest version, but was previously `generate_fake_flight_reservations`. Consistency is important for maintainability.
@@ -48,6 +66,7 @@ This document outlines known and potential issues, design decisions, and improve
 - Add error handling for file and DataFrame operations.
 - Save summary statistics to a separate results file.
 - Add more detailed logging (e.g., timestamp, run number).
+- Make the log file line limit configurable (currently hardcoded to 500 lines).
 - Consider using pandas' built-in memory profiling tools for more accurate memory usage.
 - Add unit tests for helper functions.
 
@@ -55,3 +74,4 @@ This document outlines known and potential issues, design decisions, and improve
 
 ## Summary
 While the script fulfills its benchmarking purpose, addressing the above issues would improve performance, maintainability, and usability.
+

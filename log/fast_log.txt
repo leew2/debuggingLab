@@ -4402,3 +4402,403 @@ Memory usage before removing nulls: 0.0595 MB
 Memory usage after removing nulls: 0.0563 MB
 Difference: 0.0031 MB
 Execution time: 0.0124053955078125 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.030718088150024414 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0571 MB
+Difference: 0.0024 MB
+Execution time: 0.02795553207397461 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0572 MB
+Difference: 0.0024 MB
+Execution time: 0.027746915817260742 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0577 MB
+Difference: 0.0019 MB
+Execution time: 0.027511119842529297 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.026606321334838867 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0574 MB
+Difference: 0.0022 MB
+Execution time: 0.026748180389404297 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.02630782127380371 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0571 MB
+Difference: 0.0024 MB
+Execution time: 0.028319120407104492 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.026434659957885742 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.027955293655395508 seconds
+Memory usage before removing nulls: 0.0597 MB
+Memory usage after removing nulls: 0.0577 MB
+Difference: 0.0019 MB
+Execution time: 0.02703118324279785 seconds
+Memory usage before removing nulls: 0.0594 MB
+Memory usage after removing nulls: 0.0558 MB
+Difference: 0.0036 MB
+Execution time: 0.02662801742553711 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0560 MB
+Difference: 0.0034 MB
+Execution time: 0.02734518051147461 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0572 MB
+Difference: 0.0024 MB
+Execution time: 0.029555797576904297 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0561 MB
+Difference: 0.0034 MB
+Execution time: 0.02862715721130371 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.028912782669067383 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.029458284378051758 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.028914213180541992 seconds
+Memory usage before removing nulls: 0.0594 MB
+Memory usage after removing nulls: 0.0560 MB
+Difference: 0.0034 MB
+Execution time: 0.028275728225708008 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0572 MB
+Difference: 0.0025 MB
+Execution time: 0.029885292053222656 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.02673792839050293 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.027621746063232422 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.028421640396118164 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0560 MB
+Difference: 0.0034 MB
+Execution time: 0.026132822036743164 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0030 MB
+Execution time: 0.02741861343383789 seconds
+Memory usage before removing nulls: 0.0594 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0031 MB
+Execution time: 0.02878427505493164 seconds
+Memory usage before removing nulls: 0.0594 MB
+Memory usage after removing nulls: 0.0561 MB
+Difference: 0.0034 MB
+Execution time: 0.025196552276611328 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0031 MB
+Execution time: 0.02882862091064453 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.027164459228515625 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.028673887252807617 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.0270993709564209 seconds
+Memory usage before removing nulls: 0.0597 MB
+Memory usage after removing nulls: 0.0583 MB
+Difference: 0.0014 MB
+Execution time: 0.02951812744140625 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0572 MB
+Difference: 0.0024 MB
+Execution time: 0.03198528289794922 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.0287630558013916 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.031394243240356445 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0574 MB
+Difference: 0.0022 MB
+Execution time: 0.03133845329284668 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0030 MB
+Execution time: 0.029305458068847656 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0574 MB
+Difference: 0.0022 MB
+Execution time: 0.028646230697631836 seconds
+Memory usage before removing nulls: 0.0594 MB
+Memory usage after removing nulls: 0.0558 MB
+Difference: 0.0036 MB
+Execution time: 0.027612924575805664 seconds
+Memory usage before removing nulls: 0.0594 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0031 MB
+Execution time: 0.02712273597717285 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.03278613090515137 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.03216218948364258 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0574 MB
+Difference: 0.0022 MB
+Execution time: 0.03506302833557129 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.030041933059692383 seconds
+Memory usage before removing nulls: 0.0594 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0028 MB
+Execution time: 0.030939102172851562 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0574 MB
+Difference: 0.0021 MB
+Execution time: 0.027451515197753906 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.02657318115234375 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0574 MB
+Difference: 0.0021 MB
+Execution time: 0.027940750122070312 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.027149200439453125 seconds
+Memory usage before removing nulls: 0.0594 MB
+Memory usage after removing nulls: 0.0560 MB
+Difference: 0.0034 MB
+Execution time: 0.028857946395874023 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.02772831916809082 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.02812051773071289 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.030225515365600586 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.027098655700683594 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.029716968536376953 seconds
+Memory usage before removing nulls: 0.0597 MB
+Memory usage after removing nulls: 0.0580 MB
+Difference: 0.0017 MB
+Execution time: 0.02897357940673828 seconds
+Memory usage before removing nulls: 0.0594 MB
+Memory usage after removing nulls: 0.0560 MB
+Difference: 0.0034 MB
+Execution time: 0.02530527114868164 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0571 MB
+Difference: 0.0024 MB
+Execution time: 0.025948524475097656 seconds
+Memory usage before removing nulls: 0.0597 MB
+Memory usage after removing nulls: 0.0577 MB
+Difference: 0.0019 MB
+Execution time: 0.02949213981628418 seconds
+Memory usage before removing nulls: 0.0597 MB
+Memory usage after removing nulls: 0.0575 MB
+Difference: 0.0022 MB
+Execution time: 0.028809785842895508 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0571 MB
+Difference: 0.0024 MB
+Execution time: 0.028367042541503906 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0571 MB
+Difference: 0.0024 MB
+Execution time: 0.02649402618408203 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.026470661163330078 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0026 MB
+Execution time: 0.02819681167602539 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0571 MB
+Difference: 0.0024 MB
+Execution time: 0.02649998664855957 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.027759075164794922 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.028463363647460938 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0572 MB
+Difference: 0.0024 MB
+Execution time: 0.027063608169555664 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0030 MB
+Execution time: 0.02685856819152832 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.02748847007751465 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.02804851531982422 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.028321266174316406 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.028630495071411133 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0571 MB
+Difference: 0.0024 MB
+Execution time: 0.028005361557006836 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0574 MB
+Difference: 0.0022 MB
+Execution time: 0.028737783432006836 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0574 MB
+Difference: 0.0022 MB
+Execution time: 0.02761673927307129 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0560 MB
+Difference: 0.0034 MB
+Execution time: 0.027811765670776367 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0031 MB
+Execution time: 0.02622222900390625 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0030 MB
+Execution time: 0.026186704635620117 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.02881789207458496 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0575 MB
+Difference: 0.0022 MB
+Execution time: 0.02673625946044922 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.026075363159179688 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0572 MB
+Difference: 0.0024 MB
+Execution time: 0.026401519775390625 seconds
+Memory usage before removing nulls: 0.0594 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0031 MB
+Execution time: 0.02699565887451172 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0558 MB
+Difference: 0.0037 MB
+Execution time: 0.025841712951660156 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0572 MB
+Difference: 0.0024 MB
+Execution time: 0.027505159378051758 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.026447772979736328 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.025690078735351562 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0574 MB
+Difference: 0.0022 MB
+Execution time: 0.02930140495300293 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0026 MB
+Execution time: 0.0273282527923584 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.025243282318115234 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0572 MB
+Difference: 0.0024 MB
+Execution time: 0.027065277099609375 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.029495716094970703 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.027569055557250977 seconds
+Memory usage before removing nulls: 0.0597 MB
+Memory usage after removing nulls: 0.0577 MB
+Difference: 0.0019 MB
+Execution time: 0.027130842208862305 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.025908946990966797 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.027872800827026367 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0566 MB
+Difference: 0.0029 MB
+Execution time: 0.02527475357055664 seconds
+Memory usage before removing nulls: 0.0595 MB
+Memory usage after removing nulls: 0.0563 MB
+Difference: 0.0032 MB
+Execution time: 0.02753758430480957 seconds
+Memory usage before removing nulls: 0.0596 MB
+Memory usage after removing nulls: 0.0569 MB
+Difference: 0.0027 MB
+Execution time: 0.026929378509521484 seconds

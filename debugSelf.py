@@ -1,10 +1,12 @@
 
-import pandas as pd
-import numpy as np
-import time as time
+
+import os
 import random
-import string
 import re
+import string
+import time
+import numpy as np
+import pandas as pd
 
 fast_logs = []
 slow_logs = []
@@ -101,8 +103,15 @@ def log_run(label, start_memory, end_memory, start_time, end_time):
         slow_logs.append(log_entry)
     try:
         os.makedirs(os.path.dirname(log_file), exist_ok=True)
+        # Append the new log entry
         with open(log_file, "a") as f:
             f.write(log_entry)
+        # Limit the log file to the last 500 lines
+        with open(log_file, "r") as f:
+            lines = f.readlines()
+        if len(lines) > 500:
+            with open(log_file, "w") as f:
+                f.writelines(lines[-500:])
     except Exception as e:
         print(f"[ERROR] Could not write to log file {log_file}: {e}")
 
