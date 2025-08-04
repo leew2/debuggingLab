@@ -3,36 +3,30 @@ import pandas as pd
 import numpy as np
 
 def main():
-    loop = True
-    while loop:
-        print("0: Exit\n1: List\n2: DataFrame")
-        choice = input("Enter your choice (0/1/2): ").strip()
-        if choice == '0' or choice.lower() == 'exit' or choice.lower() == 'stop':
-            print("Exiting the program.")
-            break
-        elif choice == '1' or choice.lower() == 'list':
-            length = int(input("Enter list length (default 10): ") or 10)
-            min_val = int(input("Enter min value (default 0): ") or 0)
-            max_val = int(input("Enter max value (default 100): ") or 100)
-            lst = generate_random_list(length, min_val, max_val)
-            print("Random List:", lst)
-        elif choice == '2' or choice.lower() == 'df':
-            rows = int(input("Enter number of rows (default 5): ") or 5)
-            cols = int(input("Enter number of columns (default 3): ") or 3)
-            df = generate_random_dataframe(rows, cols)
-            print("Random DataFrame:")
-            print(df)
-        else:
-            print("Invalid input. Please choose one of the options.")
+    print("Starting debugSelf.py...")
+    df = generate_fake_flight_reservations(200)
+    print(df)
 
-def generate_random_list(length=10, min=0, max=100):
-    lst = np.random.randint(min, max, size=length)
-    return lst.tolist()
-
-def generate_random_dataframe(rows, cols):
-    data = np.random.randint(0, 100, size=(rows, cols))
-    df = pd.DataFrame(data, columns=[f"data {i+1}" for i in range(cols)])
-    return df
+def generate_fake_flight_reservations(n):
+    import random
+    import string
+    pnr_list = ["".join(random.choices(string.ascii_uppercase + string.digits, k=6)) for _ in range(n)]
+    passenger_list = [f"Passenger_{i+1}" for i in range(n)]
+    airports = ['JFK', 'LAX', 'ORD', 'DFW', 'DEN', 'ATL', 'SFO', 'SEA', 'MIA', 'BOS']
+    origin_list = [random.choice(airports) for _ in range(n)]
+    destination_list = [random.choice([a for a in airports if a != origin_list[i]]) for i in range(n)]
+    fare_list = [round(random.uniform(100, 1500), 2) for _ in range(n)]
+    status_list = [random.choice(['Confirmed', 'Cancelled', 'Pending']) for _ in range(n)]
+    data = {
+        'PNR': pnr_list,
+        'Passenger': passenger_list,
+        'Origin': origin_list,
+        'Destination': destination_list,
+        'Fare': fare_list,
+        'Status': status_list
+    }
+    return pd.DataFrame(data)
+    
 
 if __name__ == "__main__":
     main()
