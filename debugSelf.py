@@ -1,5 +1,3 @@
-
-
 import os
 import random
 import re
@@ -27,12 +25,12 @@ def main():
             continue
         # Optionally comment out the next line to avoid printing all data
         print_dataframe(df) # prints the data to show differences in time differences
+        df = df.drop_duplicates()  # Drop duplicates before removing nulls
         df = remove_null(df)
         end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
         end_time = time.time()
         log_run("slow", start_memory, end_memory, start_time, end_time)
     
-
     # Run fast mode 100 times
     for i in range(100):
         start_time = time.time()
@@ -45,6 +43,7 @@ def main():
             continue
         # Optionally comment out the next line to avoid printing all data
         print(df) # prints the data to show differences in time differences
+        df = df.drop_duplicates()  # Drop duplicates before removing nulls
         df = df.dropna(subset=required_columns)
         end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
         end_time = time.time()
