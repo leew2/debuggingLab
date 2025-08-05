@@ -26,6 +26,7 @@ def main():
         # Optionally comment out the next line to avoid printing all data
         print_dataframe(df) # prints the data to show differences in time differences
         df = df.drop_duplicates()  # Drop duplicates before removing nulls
+        df = fill_missing_integers_with_mean(df)
         df = remove_null(df)
         end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
         end_time = time.time()
@@ -44,6 +45,7 @@ def main():
         # Optionally comment out the next line to avoid printing all data
         print(df) # prints the data to show differences in time differences
         df = df.drop_duplicates()  # Drop duplicates before removing nulls
+        df = fill_missing_integers_with_mean(df)
         df = df.dropna(subset=required_columns)
         end_memory = df.memory_usage(deep=True).sum() / (1024 ** 2)
         end_time = time.time()
