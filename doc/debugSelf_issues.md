@@ -74,4 +74,3 @@ The `fake_flight` function generates synthetic flight reservation data with the 
 
 ## Summary
 While the script fulfills its benchmarking purpose, addressing the above issues would improve performance, maintainability, and usability.
-
